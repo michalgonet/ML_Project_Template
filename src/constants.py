@@ -8,3 +8,4 @@ CATEGORICAL_FEATURES: list[str] = ["gender",
                                    "lunch",
                                    "test_preparation_course"]
 TARGET_COLUMN: str = "math_score"
+BEST_MODEL_THRESHOLD: float = 0.6

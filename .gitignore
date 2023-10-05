@@ -2,6 +2,7 @@ AnyML.egg-info
 anyML_venv
 artifacts
 Data
+catboost_info
 .idea
 
 logs
