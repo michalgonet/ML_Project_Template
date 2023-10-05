@@ -40,12 +40,55 @@ class ModelTrainer:
                 "AdaBoost Regressor": AdaBoostRegressor(),
             }
 
+            params = {
+                "Decision Tree": {
+                    'criterion': constants.DECISION_TREE_CRITERION,
+                    'splitter': constants.DECISION_TREE_SPLITTER,
+                    'max_features': constants.DECISION_TREE_MAX_FEATURES,
+                },
+                "Random Forest": {
+                    'criterion': constants.RANDOM_FOREST_CRITERION,
+                    'max_features': constants.RANDOM_FOREST_MAX_FEATURES,
+                    'n_estimators': constants.RANDOM_FOREST_N_ESTIMATORS
+                },
+                "Gradient Boosting": {
+                    'loss': constants.GRADIENT_BOOSTING_LOSS,
+                    'learning_rate': constants.GRADIENT_BOOSTING_LR,
+                    'subsample': constants.GRADIENT_BOOSTING_SUBSAMPLE,
+                    'criterion': constants.GRADIENT_BOOSTING_CRITERION,
+                    'max_features': constants.GRADIENT_BOOSTING_MAX_FEATURES,
+                    'n_estimators': constants.GRADIENT_BOOSTING_N_ESTIMATORS
+                },
+                "Linear Regression": {},
+                "K-Neighbors Regressor": {
+                    'n_neighbors': constants.K_NEIGHBOUR_N_NEIGHBOUR,
+                    'weights': constants.K_NEIGHBOUR_WEIGHTS,
+                    'algorithm': constants.K_NEIGHBOUR_ALGORITHM
+                },
+                "XGBRegressor": {
+                    'learning_rate': constants.XGB_LR,
+                    'n_estimators': constants.XGB_N_ESTIMATORS
+                },
+                "CatBoosting Regressor": {
+                    'depth': constants.CATBOOST_DEPTH,
+                    'learning_rate': constants.CATBOOST_LR,
+                    'iterations': constants.CATBOOST_ITERS
+                },
+                "AdaBoost Regressor": {
+                    'learning_rate': constants.ADABOOST_LR,
+                    'loss': constants.ADABOOST_LOSS,
+                    'n_estimators': constants.ADABOOST_N_ESTIMATORS
+                }
+
+            }
             model_report = evaluate_model(
                 x_train=x_train,
                 y_train=y_train,
                 x_test=x_test,
                 y_test=y_test,
-                models=models)
+                models=models,
+                params=params
+            )
 
             best_model_score = max(sorted(model_report.values()))
             best_model_name = list(model_report.keys())[
