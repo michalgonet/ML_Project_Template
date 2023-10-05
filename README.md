@@ -1,4 +1,5 @@
-# ML_Project_Template
+# Any ML project template
+
 This template is a general architecture for any Machine Learning project
 The `requirements.txt` file contains typical and most common libraries used 
 for machine learning projects in Python
