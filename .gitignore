@@ -1,8 +1,10 @@
 AnyML.egg-info
 anyML_venv
-
+artifacts
+Data
 .idea
 
 logs
 
 __pycache__
+
